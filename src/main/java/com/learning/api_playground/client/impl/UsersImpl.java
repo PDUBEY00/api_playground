@@ -10,20 +10,21 @@ import io.restassured.specification.RequestSpecification;
 
 public class UsersImpl implements Users {
 
+	private final String baseUrl = "https://reqres.in";
+
 	@Override
 	public Records getRecords() {
-		
-		 RestAssured.baseURI = "https://reqres.in";
-		 
-		 RequestSpecification httpRequest = RestAssured.given();
-		 
-		 Response response = httpRequest.request(Method.GET, "/api/users");
-		 
-		 Records records = response.as(Records.class);
-		 
-		 return records;
-		
+
+		RestAssured.baseURI = baseUrl;
+
+		RequestSpecification httpRequest = RestAssured.given();
+
+		Response response = httpRequest.request(Method.GET, "/api/users");
+
+		Records records = response.as(Records.class);
+
+		return records;
+
 	}
 
-	
 }
