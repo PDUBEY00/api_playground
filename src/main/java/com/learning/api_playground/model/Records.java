@@ -2,13 +2,16 @@ package com.learning.api_playground.model;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class Records {
 
 	private int page;
 	private int per_page;
 	private int total;
 	private int total_pages;
-	private List<Data> dataList;
+	@JsonProperty("data")
+	private List<Data> users;
 
 	public int getTotal_pages() {
 		return total_pages;
@@ -41,13 +44,14 @@ public class Records {
 	public void setTotal(int total) {
 		this.total = total;
 	}
-
-	public List<Data> getDataList() {
-		return dataList;
+	
+	 
+	public List<Data> getUsers() {
+		return users;
 	}
 
-	public void setDataList(List<Data> dataList) {
-		this.dataList = dataList;
+	public void setDataList(List<Data> users) {
+		this.users = users;
 	}
 
 }

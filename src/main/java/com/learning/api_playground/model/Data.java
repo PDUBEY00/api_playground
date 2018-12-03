@@ -1,10 +1,17 @@
 package com.learning.api_playground.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
+@JsonIgnoreProperties(value = {"avatar", "data"})
 public class Data {
 		
 		private int id;
+		@JsonProperty("first_name")
         private String firstName;
+		@JsonProperty("last_name")
         private String lastName;
+		
+		
         
         public int getId() {
 			return id;
